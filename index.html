@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风絮琉璃</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-shims.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'handwriting': ['"Ma Shan Zheng"', 'cursive'],
+                        'serif': ['"Noto Serif SC"', 'serif']
+                    },
+                    colors: {
+                        'glass-teal': '#7dd3fc',
+                        'gold': '#fbbf24',
+                        'light-teal': '#e0f2fe'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .char-fade {
+                display: inline-block;
+                transition: opacity 1s ease;
+                cursor: pointer;
+            }
+            .char-fade:hover {
+                text-decoration: underline;
+                text-decoration-color: #7dd3fc;
+            }
+            .char-fade.fade-out {
+                opacity: 0;
+            }
+            .dandelion {
+                position: fixed;
+                top: -20px;
+                z-index: 10;
+                pointer-events: none;
+                animation: float 8s ease-in-out infinite;
+            }
+            @keyframes float {
+                0% {
+                    transform: translateY(0) translateX(0) rotate(0) scale(0.8);
+                    opacity: 0;
+                }
+                10% {
+                    opacity: 0.8;
+                }
+                90% {
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(100vh) translateX(calc(30px + (Math.random() * 70px))) rotate(720deg) scale(1.2);
+                    opacity: 0;
+                }
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-serif text-gray-800 bg-light-teal">
+    <!-- 背景模块 -->
+    <div class="fixed inset-0 z-0">
+        <div class="w-full h-full bg-light-teal"></div>
+        <img src="https://aka.doubaocdn.com/s/Sj0B1vz7vY" alt="风絮琉璃背景" class="w-full h-full opacity-10 mix-blend-multiply object-cover fixed inset-0" style="background-repeat: repeat;">
+    </div>
+
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+        <div class="container mx-auto px-4 py-3 flex justify-center space-x-6 md:space-x-8">
+            <a href="#home" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">首页</a>
+            <a href="#analysis" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">情感解析</a>
+            <a href="#section1" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">风絮之飒</a>
+            <a href="#section2" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">琉璃之韵</a>
+            <a href="#section3" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">风与琉璃</a>
+            <a href="#section4" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">翩跹易逝</a>
+            <a href="#section5" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">清韵久凝</a>
+            <a href="#section6" class="text-glass-teal font-handwriting text-xl hover:text-gold transition-colors">风定韵长</a>
+        </div>
+    </nav>
+
+    <!-- 封面模块 -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 bg-cover bg-center" style="background-image: url('https://aka.doubaocdn.com/s/hGuX1vz7vr');">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="text-center px-4 z-20">
+            <h1 class="font-handwriting text-[clamp(2.5rem,8vw,5rem)] text-white mb-6 drop-shadow-lg">风絮琉璃</h1>
+            <p class="font-serif text-[clamp(1rem,3vw,1.5rem)] text-white leading-relaxed drop-shadow-md">
+                风驭轻絮，自在飒然，翩跹易逝；<br>
+                琉璃轻覆，清韵久凝，风定韵长。
+            </p>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-white text-2xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 情感解析章节 -->
+    <section id="analysis" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">诗句情感解析</h2>
+            <div class="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-lg shadow-md">
+                <div class="mb-8">
+                    <h3 class="font-handwriting text-xl text-gold mb-4">自由快意与怅惘珍惜交织</h3>
+                    <p class="char-container leading-relaxed">
+                        风驭轻絮，自在飒然，翩跹易逝将风絮拟作被风执掌的自在生灵，满是不受拘束的飒然意气，翩跹起舞的姿态里是对无拘无束、随性洒脱的生命状态的由衷向往；但易逝二字又添了一丝淡而清的怅惘，带着对美好事物转瞬即逝的惋惜，也藏着对每一份灵动瞬间的珍视——正因为短暂，这份自在才更显珍贵。
+                    </p>
+                </div>
+                <div class="mb-8">
+                    <h3 class="font-handwriting text-xl text-gold mb-4">对沉静悠长的眷恋</h3>
+                    <p class="char-container leading-relaxed">
+                        琉璃轻覆，清韵久凝，风定韵长里，琉璃的澄澈温润如同凝住了时光的清韵，在风定后的静谧里更显悠长，传递出对沉静、持久、温润的美好意境的眷恋，是对岁月沉淀下的雅致与安然的珍视，如同在喧嚣后向往一份慢下来的时光，让心境在温润的质感里慢慢沉淀。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-handwriting text-xl text-gold mb-4">动与静的情感交融</h3>
+                    <p class="char-container leading-relaxed">
+                        风的灵动与琉璃的静雅，恰似动与静的交融。风携着轻絮掠过琉璃的光泽，将短暂的自由与永恒的温润相织，织就出一幅既有飒然意气，又有悠长韵味的图景。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第一章：风絮之飒 -->
+    <section id="section1" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">风絮之飒</h2>
+            <div class="flex flex-col items-center">
+                <img src="https://aka.doubaocdn.com/s/Mj6h1vz7vY" alt="风絮之飒" class="w-full max-w-md mb-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-500">
+                <p class="char-container max-w-2xl text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-center bg-white/70 backdrop-blur-sm p-6 rounded-lg">
+                    风卷轻絮，如流云漫过天际，自在飒然，无拘无束。它们随风起舞，翩跹若蝶，转瞬便消逝在长空之中，恰似世间那些自由而短暂的美好，留予人无限遐想。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二章：琉璃之韵 -->
+    <section id="section2" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">琉璃之韵</h2>
+            <div class="flex flex-col items-center">
+                <img src="https://aka.doubaocdn.com/s/ncJB1vz7vX" alt="琉璃之韵" class="w-full max-w-md mb-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-500">
+                <p class="char-container max-w-2xl text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-center bg-white/70 backdrop-blur-sm p-6 rounded-lg">
+                    琉璃轻覆，似凝住了时光的清韵，澄澈而温润。它历经淬炼，凝萃出静雅的光泽，在岁月中缓缓流淌，将悠长的韵味藏于通透的质地里，沉淀下永恒的雅致。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三章：风与琉璃 -->
+    <section id="section3" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">风与琉璃</h2>
+            <div class="flex flex-col items-center">
+                <img src="https://aka.doubaocdn.com/s/QcVX1vz7vY" alt="风与琉璃" class="w-full max-w-md mb-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-500">
+                <p class="char-container max-w-2xl text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-center bg-white/70 backdrop-blur-sm p-6 rounded-lg">
+                    风的灵动与琉璃的静雅，恰似动与静的交融。风携着轻絮掠过琉璃的光泽，将短暂的自由与永恒的温润相织，织就出一幅既有飒然意气，又有悠长韵味的图景。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第四章：翩跹易逝 -->
+    <section id="section4" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">翩跹易逝</h2>
+            <div class="flex flex-col items-center">
+                <img src="https://aka.doubaocdn.com/s/v31T1vz7vY" alt="翩跹易逝" class="w-full max-w-md mb-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-500">
+                <p class="char-container max-w-2xl text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-center bg-white/70 backdrop-blur-sm p-6 rounded-lg">
+                    轻絮翩跹，如惊鸿一瞥，转瞬便消散在风里。这份易逝的美好，正如同生命中那些稍纵即逝的瞬间，因短暂而更显珍贵，让人愈发珍惜每一次的相遇与悸动。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第五章：清韵久凝 -->
+    <section id="section5" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">清韵久凝</h2>
+            <div class="flex flex-col items-center">
+                <img src="https://aka.doubaocdn.com/s/RaUE1vz7vY" alt="清韵久凝" class="w-full max-w-md mb-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-500">
+                <p class="char-container max-w-2xl text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-center bg-white/70 backdrop-blur-sm p-6 rounded-lg">
+                    琉璃的清韵，在时光中慢慢凝萃，愈发温润悠长。它如同那些历经沉淀的美好，在岁月的洗礼中愈发醇厚，成为心底最沉静也最持久的慰藉，在风定之时，缓缓流淌。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第六章：风定韵长 -->
+    <section id="section6" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="font-handwriting text-[clamp(1.8rem,5vw,3rem)] text-center text-glass-teal mb-12">风定韵长</h2>
+            <div class="flex flex-col items-center">
+                <img src="https://aka.doubaocdn.com/s/4a841vz7vs" alt="风定韵长" class="w-full max-w-md mb-8 rounded-lg shadow-lg hover:scale-105 transition-transform duration-500">
+                <p class="char-container max-w-2xl text-[clamp(1rem,2vw,1.25rem)] leading-relaxed text-center bg-white/70 backdrop-blur-sm p-6 rounded-lg">
+                    风定之后，琉璃的清韵愈发悠长，轻絮的余韵仍在心头流转。动与静的交融，短暂与永恒的交织，最终沉淀成一段悠长的意韵，在时光里缓缓晕开，萦绕不散。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-8 relative z-10 bg-white/10 backdrop-blur-sm">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>© 2026 风絮琉璃 | 静雅之韵，自在之美</p>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-glass-teal text-white p-3 rounded-full shadow-lg hover:bg-gold transition-all duration-300 opacity-0 invisible z-50">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95', 'shadow-md');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-white/95', 'shadow-md');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 文字淡入淡出特效
+        function initCharFade() {
+            const containers = document.querySelectorAll('.char-container');
+            containers.forEach(container => {
+                const text = container.textContent;
+                container.innerHTML = '';
+                for (let char of text) {
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    span.classList.add('char-fade');
+                    span.lastFadeTime = 0;
+                    span.protectedUntil = 0;
+                    span.addEventListener('click', function() {
+                        this.classList.remove('fade-out');
+                        if (this.fadeTimeout) {
+                            clearTimeout(this.fadeTimeout);
+                            this.fadeTimeout = null;
+                        }
+                        this.protectedUntil = Date.now() + 3000;
+                    });
+                    container.appendChild(span);
+                }
+            });
+
+            const containerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const spans = entry.target.querySelectorAll('.char-fade');
+                    if (!entry.isIntersecting) {
+                        spans.forEach(span => {
+                            span.classList.remove('fade-out');
+                            if (span.fadeTimeout) {
+                                clearTimeout(span.fadeTimeout);
+                                span.fadeTimeout = null;
+                            }
+                            span.protectedUntil = 0;
+                            span.lastFadeTime = 0;
+                        });
+                    }
+                });
+            }, { threshold: 0.0 });
+
+            containers.forEach(container => {
+                containerObserver.observe(container);
+            });
+
+            function toggleRandomChars() {
+                const allVisibleSpans = [];
+                containers.forEach(container => {
+                    const rect = container.getBoundingClientRect();
+                    const isVisible = !(rect.bottom <= 0 || rect.top >= (window.innerHeight || document.documentElement.clientHeight));
+                    if (isVisible) {
+                        const spans = container.querySelectorAll('.char-fade');
+                        spans.forEach(span => {
+                            const isProtected = Date.now() < span.protectedUntil;
+                            const isCoolingDown = Date.now() - span.lastFadeTime < 8000;
+                            if (!span.classList.contains('fade-out') && !span.fadeTimeout && !isProtected && !isCoolingDown) {
+                                allVisibleSpans.push(span);
+                            }
+                        });
+                    }
+                });
+
+                if (allVisibleSpans.length === 0) return;
+
+                const count = Math.floor(Math.random() * 3) + 1;
+                for (let i = 0; i < count; i++) {
+                    if (allVisibleSpans.length === 0) break;
+                    const randomIndex = Math.floor(Math.random() * allVisibleSpans.length);
+                    const targetSpan = allVisibleSpans[randomIndex];
+                    
+                    targetSpan.classList.add('fade-out');
+                    targetSpan.lastFadeTime = Date.now();
+                    targetSpan.fadeTimeout = setTimeout(() => {
+                        targetSpan.classList.remove('fade-out');
+                        targetSpan.fadeTimeout = null;
+                    }, 8000);
+                }
+            }
+
+            setInterval(toggleRandomChars, 1500);
+            toggleRandomChars();
+        }
+
+        // 生成蒲公英飘落特效
+        function createDandelions() {
+            const dandelionCount = 10;
+            for (let i = 0; i < dandelionCount; i++) {
+                const dandelion = document.createElement('div');
+                dandelion.classList.add('dandelion');
+                dandelion.innerHTML = `
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="1"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        <line x1="7.76" y1="7.76" x2="9.17" y2="9.17"/>
+                        <line x1="14.83" y1="14.83" x2="16.24" y2="16.24"/>
+                        <line x1="7.76" y1="16.24" x2="9.17" y2="14.83"/>
+                        <line x1="14.83" y1="9.17" x2="16.24" y2="7.76"/>
+                    </svg>
+                `;
+                dandelion.style.left = `${Math.random() * 100}vw`;
+                dandelion.style.animationDuration = `${5 + Math.random() * 10}s`;
+                dandelion.style.animationDelay = `${Math.random() * 5}s`;
+                dandelion.style.fontSize = `${12 + Math.random() * 8}px`;
+                dandelion.style.opacity = `${0.5 + Math.random() * 0.5}`;
+                document.body.appendChild(dandelion);
+            }
+        }
+
+        // 页面加载完成后初始化
+        window.addEventListener('load', () => {
+            initCharFade();
+            createDandelions();
+        });
+    </script>
+</body>
+</html>
